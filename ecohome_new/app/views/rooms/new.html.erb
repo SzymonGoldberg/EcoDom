@@ -1,11 +1,11 @@
 <%# app/views/quotes/new.html.erb %>
 
 <main class="container">
-  <%= link_to sanitize("&larr; Back to quotes"), quotes_path %>
+  <%= link_to sanitize("&larr; Back to quotes"), rooms_path %>
 
   <div class="header">
-    <h1>New quote</h1>
+    <h1>New room</h1>
   </div>
 
-  <%= render "form", quote: @quote %>
+  <%= render "form", room: @room %>
 </main>

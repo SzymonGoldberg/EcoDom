@@ -1,6 +1,6 @@
 <%# app/views/quotes/_form.html.erb %>
 
-<%= simple_form_for room, html: { class: "quote form" } do |f| %>
+<%= simple_form_for room, html: { class: "room form" } do |f| %>
   <% if room.errors.any? %>
     <div class="error-message">
       <%= room.errors.full_messages.to_sentence.capitalize %>

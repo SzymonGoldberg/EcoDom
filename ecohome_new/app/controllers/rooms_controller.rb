@@ -1,6 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, [:show, :edit, :update, :destroy]
-
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
   def index
     @rooms = Room.all
   end
@@ -21,7 +20,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to rooms_path, notice: "Room was successfully created!"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,7 +28,7 @@ class RoomsController < ApplicationController
     if @room.update(rooms_params)
       redirect_to rooms_path, notice: "Room was successfully edited!"
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
   
